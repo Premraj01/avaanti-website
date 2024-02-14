@@ -4,6 +4,20 @@ body {
   color: #040000;
 }
 
+.mt-20{
+  margin-top: 75px;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-margin{
+  margin-bottom: 90px;
+}
+
 .layout_padding {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -28,6 +42,11 @@ body {
 .layout_padding-bottom {
   padding-bottom: 120px;
 }
+
+.padding-top-80{
+  padding-top: 80px;
+}
+
 
 .heading_container {
   display: -webkit-box;
@@ -484,7 +503,7 @@ a:focus {
 
 .service_section .box {
   margin-top: 30px;
-  text-align: center;
+  /* text-align: center; */
   -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
   padding: 25px 15px;

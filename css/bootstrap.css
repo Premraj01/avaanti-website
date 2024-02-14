@@ -75,7 +75,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -547,26 +547,10 @@ pre code {
 
 .container {
   width: 100%;
-  /* display: flex; */
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* justify-self: center; */
-}
-
-.flex{
-  display: flex;
-  justify-content: center;
-  justify-self: center;
-}
-
-.subtitle{
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 8px;
 }
 
 @media (min-width: 576px) {
