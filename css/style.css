@@ -28,7 +28,6 @@ body {
 
 .contact_form input{
     width: 100%;
-    color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -784,7 +783,6 @@ a:focus {
   padding-left: 25px;
   background-color: #ffffff;
   outline: none;
-  color: #ffffff;
   -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
 }
