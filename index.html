@@ -563,13 +563,20 @@
 							</div>
 							<form class="contact_form" action="#">
 								<div>
-									<input id="name" type="text" placeholder="Name" />
+									<input id="name" type="text" placeholder="Name" required />
 								</div>
+								<span class="error" id="name-error"></span>
 								<div>
-									<input id="phone" type="text" placeholder="Phone Number" />
+									<input
+										id="phone"
+										type="number"
+										placeholder="Phone Number"
+										required
+									/>
 								</div>
+								<span class="error" id="phone-error"></span>
 								<div>
-									<input id="email" type="email" placeholder="Email" />
+									<input id="email" type="email" placeholder="Email" required />
 								</div>
 								<div>
 									<!-- <label for="fa-quote-left">Select a Flat:</label> -->
@@ -579,6 +586,7 @@
 										style="width: 100%"
 										name="flats"
 										id="flats"
+										required
 									>
 										<option value="0">Select Flat:</option>
 										<option value="3.5BHK">3.5BHK</option>
@@ -686,22 +694,34 @@
 		<!-- footer section -->
 		<script>
 			const form = document.querySelector(".contact_form");
+
 			function onFormSubmit(e) {
 				e.preventDefault();
+				let validation = false;
 				let name = document.getElementById("name").value;
 				let phone = document.getElementById("phone").value;
 				let email = document.getElementById("email").value;
 				let flat = document.getElementById("flats").value;
 
-				Email.send({
-					SecureToken: "4e268e68-d373-433f-82df-06db37462224",
-					To: "domnicf9@gmail.com",
-					From: ` ${email}`,
-					Subject: `Contacted by customer ${name}`,
-					Body: `Contact Phone: ${phone} <br/> Contact Email: ${email} <br/> Inquiry for ${flat} flat`,
-				}).then((message) => {
-					alert(message);
-				});
+				if (/^\d{10}$/.test(phone)) {
+					validation = true;
+				} else {
+					let number = document.getElementById("phone-error");
+					number.innerHTML = "Invalid number; must be ten digits";
+					return false;
+				}
+
+				if (validation) {
+					Email.send({
+						SecureToken: "4e268e68-d373-433f-82df-06db37462224",
+						To: "domnicf9@gmail.com",
+						From: `${email}`,
+						Subject: `Contacted by customer ${name}`,
+						Body: `Contact Phone: ${phone} <br/> Contact Email: ${email} <br/> Inquiry for ${flat} flat`,
+					}).then((message) => {
+						alert(message);
+					});
+				}
 			}
 			form.addEventListener("submit", onFormSubmit);
 		</script>
